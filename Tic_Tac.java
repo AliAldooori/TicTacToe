@@ -20,19 +20,23 @@ public class Tic_Tac {
 				                       { ' ', '|', ' ', '|', ' ' } };
 
 		printbord(bord);
-// hej osama hur mår du 
+		
 		do {
 			System.out.println("enter your number between 9-1");
 
-			playerposition(bord, player1(), "player1");
-			playerinput.add(player1());
+			int player1current = player1();
+			playerposition(bord, player1current, "player1");
+			playerinput.add(player1current);
+		
+			printbord(bord);
 			System.out.println(playerinput);
 
-			playerposition(bord, player2(), "player2");
-			playerRandom.add(player2());
-			System.out.println(playerRandom);
+			int player2current = player2();
+			playerposition(bord, player2current, "player2");
+			playerRandom.add(player2current);
 
 			printbord(bord);
+			System.out.println(playerRandom);
 			
 			
 			ArrayListWinner(playerinput, playerRandom);
