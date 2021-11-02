@@ -13,30 +13,33 @@ public class Tic_Tac {
 
 	public static void main(String[] args) {
 
-		char[][] bord = new char[][] { { ' ', '|', ' ', '|', ' ' },
+		char[][] board = new char[][] { { ' ', '|', ' ', '|', ' ' },
 			                           { '-', '+', '-', '+', '-' },
 				                       { ' ', '|', ' ', '|', ' ' }, 
 				                       { '-', '+', '-', '+', '-' }, 
 				                       { ' ', '|', ' ', '|', ' ' } };
 
-		printbord(bord);
+		printbord(board);
+		
+		int player1current;
+		int player2current;
 		
 		do {
-			System.out.println("enter your number between 9-1");
+			System.out.println("Enter your number between 1-9: ");
 
-			int player1current = player1();
-			playerposition(bord, player1current, "player1");
+			player1current = player1();
+			playerposition(board, player1current, "player1");
 			playerinput.add(player1current);
-		
-			printbord(bord);
 			System.out.println(playerinput);
+			
+			printbord(board);
 
-			int player2current = player2();
-			playerposition(bord, player2current, "player2");
+			player2current = player2(); 
+			playerposition(board, player2current, "player2");
 			playerRandom.add(player2current);
-
-			printbord(bord);
 			System.out.println(playerRandom);
+			
+			printbord(board);
 			
 			
 			ArrayListWinner(playerinput, playerRandom);
@@ -65,7 +68,7 @@ public class Tic_Tac {
 
 		int player1 = input.nextInt();
 		while (playerinput.contains(player1) || playerRandom.contains(player1)) {
-			System.out.println("you choose fail position  , choose another position  ");
+			System.out.println("Invalid position, choose another position: ");
 			player1 = input.nextInt();
 		
 		}
